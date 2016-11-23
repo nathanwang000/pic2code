@@ -1,0 +1,54 @@
+#+TITLE: readme
+#+DATE: <2016-11-23 Wed>
+#+AUTHOR: Jiaxuan Wang
+#+EMAIL: jiaxuan@umich
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t c:nil
+#+OPTIONS: creator:comment d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t
+#+OPTIONS: num:t p:nil pri:nil stat:t tags:t tasks:t tex:t timestamp:nil toc:nil
+#+OPTIONS: todo:t |:t
+#+CREATOR: Emacs 24.5.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+* Motivation
+
+Handwritten scripts are abound in my daily life. I scibble a lot to 
+record ideas, but it's hard to keep track of them. How about turn
+those into running code? Better yet, automatically classify those files
+for later indexing? Or just use it as a simple calculator? In this project, 
+I plan to use computer vision techniques to build this handy tool. It could
+be a start up idea, who knows? Exciting stuff.
+
+* Pipeline
+
+#+BEGIN_EXAMPLE
+picture input     character recognition    tokenization + spell check      parsing           evaluation
+
+--------------    ['1', '1', ' ', '2',
+|11 22 + 33 *| =>  '2', ' ', '+', ' ',  => ['11', '22', '+', '33', '*'] => (* (+ 1 22) 3) => 69
+--------------     '3', '3', ' ', '.']   
+#+END_EXAMPLE  
+
+** picture input
+
+My current plan is to make this a web app. I will access camera to take photos
+
+** character recognition
+
+I will support recognizing standard ASCII characters using convnet
+
+** tokenization + spell check
+
+Group characters into tokens and spell check each token
+
+** parsing
+
+Secmantic parsing using context free grammar
+
+** evaluation
+
+Evaluate the parse tree
+
